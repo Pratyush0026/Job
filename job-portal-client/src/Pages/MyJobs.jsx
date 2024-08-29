@@ -17,7 +17,7 @@ const MyJobs = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch(`http://localhost:3000/myJobs/pratyushnarayan17@gmail.com`)
+    fetch(`${import.meta.env.VITE_BASE_URL}myJobs/pratyushnarayan17@gmail.com`)
       .then((res) => res.json())
       .then((data) => {
         setJobs(data);
@@ -57,7 +57,7 @@ const MyJobs = () => {
 
   const handleDelete = (id) => {
     // console.log(id)
-    fetch(`http://localhost:3000/job/${id}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}job/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json)

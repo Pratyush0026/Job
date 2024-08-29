@@ -18,7 +18,7 @@ const CreateJob = () => {
   const onSubmit = (data) => {
     data.skills = selectedOption;
     // console.log(data);
-    fetch("http://localhost:3000/post-job", {
+    fetch(`${import.meta.env.VITE_BASE_URL}post-job`, {
       method:"POST",
       headers:{"content-type" : "application/json"},
       body: JSON.stringify(data)

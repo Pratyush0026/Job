@@ -30,7 +30,7 @@ const Home = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch("http://localhost:3000/all-jobs")
+    fetch(`${import.meta.env.VITE_BASE_URL}all-jobs`)
       .then((res) => res.json())
       .then((data) => {
         // console.log(data)

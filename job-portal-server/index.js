@@ -8,7 +8,10 @@ require('dotenv').config();
 
 // Middleware setup
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin:process.env.CLIENT_ORIGIN
+
+}));
 
 // MongoDB setup
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.psvpkbo.mongodb.net`;
